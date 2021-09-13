@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+    <style>
+
+    </style>
+   
+
+  </head>
+  <body>
+    <div class="container-fluid" style="background-color: #eee;height: 100vh">
+      <br>
+      <div class="row">
+        <div class="col text-center">
+
+          <button type="button" class="btn btn-danger btn-sm" id="DDTLabel" ><font size="4"> DDT Not Available</font></button>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" id="SelectLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <b>Choose Type of Truth Table</b>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#" id="starTT" style="color: black;"><b>*-TT</b></a>
+              <a class="dropdown-item" href="#" id = "pTT" style="color: black;"><b>p-TT</b></a>
+              <a class="dropdown-item" href="#" id="fTT" style="color: black;" ><b>f-TT</b></a>
+            </div>
+          </div>
+          <div class="btn-group" style="display:none" id="pTTDiv">
+            <button type="button" class="btn btn-info dropdown-toggle" id="OptionsLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <b>Options</b>
+            </button>
+            <div class="dropdown-menu" id="pTTOptions">
+            </div>
+          </div>
+          <button type="button" class="btn btn-danger btn-sm"   style="display:none" id="Entries" ><font size="4"> <b>Entries in TT</b></font></button>
+         
+          <button class="btn"  data-toggle="tooltip" title="Refresh" style="padding:0 !important;margin-left:20px !important;background-color:transparent;color: green;font-size: 18px;" id="Refresh"><i class="fa fa-refresh fa-lg" id="RefreshIcon" aria-hidden="true"></i></button>
+          <button type="button" class="btn btn-success mx-auto float-right" style="margin-right: 20px; margin-top: 20px;" id="next">Next</button>
+        </div>
+        
+      </div>
+      <br>
+      <div class="table-responsive" id="table" style="max-height: 80%; max-width: 100%;">
+          <table class="table table-striped table-hover table-condensed table-bordered table-sm" style="table-layout: fixed;padding-top: 0mm;" >
+          
+            <thead align="center" id="table-head">
+
+            </thead>
+            <tbody id="table-body">
+                            
+
+            </tbody>
+          </table>
+        </div>
+    </div>
+
+
+      <div class="window-content">
+        <div class="pane-group">
+          
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script> require("./js/jquery.dataTables.min.js")</script>   
+  <script> require("./js/dataTables.bootstrap4.min.js")</script>    -->
+  <!-- <script>
+   $('.dropdown-item').on('click',  function(){
+        var btnObj = $(this).parent().siblings('button');
+        $(btnObj).text($(this).text());
+        $(btnObj).val($(this).text());
+    });
+  </script> -->
+  <script> require("./DDTToTT.js")</script>   
+
+  
+  <!-- <script> $('#example').DataTable(); </script>   -->
+    
+</body>
+</html>

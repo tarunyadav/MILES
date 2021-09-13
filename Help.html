@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+    <style>
+      a {
+        color: inherit;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="container-fluid" style="background-color: #eee;height: 100vh">
+      <br>
+      <div class="row">
+          <div class="col text-center">
+            <h3><span class="badge badge-info"> Help / MILES Manual </span>
+              <button class="btn"  data-toggle="tooltip" title="Refresh" style="padding:0 !important;margin-left:10px !important;background-color:transparent;color: green;font-size: 18px;" id="Refresh"><i class="fa fa-refresh fa-lg" aria-hidden="true"></i></button>
+            </h3>       
+          </div>
+      </div>  
+
+            <object type="text/html" data="./js/pdfjs-2.2.228-dist/web/viewer.html" width="100%" height="85%"></object>
+
+    </div>
+
+  </div>
+  <script> require("./Help.js")</script>     
+</body>
+</html>

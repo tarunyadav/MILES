@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MILES</title>
+    <!--<link rel="stylesheet" href="styles.css" />-->
+    <link rel="stylesheet" href="./css/photon.min.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+    <!--<script src="./js/menu.js" charset="utf-8"></script>-->
+  </head>
+  <body >
+    
+    <div class="window" style="border: 2px solid rgb(119, 120, 128);">
+
+      <!-- .toolbar-header sits at the top of your app -->
+      <header class="toolbar toolbar-header" style="-webkit-app-region: drag">
+        
+        <div class="toolbar-actions">
+            
+            <div class="btn-group pull-right">
+              <button class="btn btn-default" id="minimizeBtn">
+                  <span class="icon icon-minus-squared"></span>
+                </button>
+              <button class="btn btn-default" id="maximizeBtn">
+                    <span class="icon icon-window"></span>
+              </button>
+              <button class="btn btn-default" id="closeBtn">
+                <span class="icon icon-cancel-squared"></span>
+              </button>
+            </div>
+            <div class="title" style="font-family:Georgia; font-size:30px; font-weight: bold; color:#484848;margin:auto;margin-left: 150px;">
+              MILES: MInimized Linear inEqualities for large S-boxes
+                
+            </div>
+        </div>
+      </header>
+    
+      <!-- Your app's content goes inside .window-content -->
+      <div class="window-content">
+        <div class="pane-group">
+          <div class="pane pane-sm sidebar">
+            <nav class="nav-group">
+              <!--<h5 class="nav-group-title"></h5>-->
+              <span class="nav-group-item active" id="SboxToDDT">
+                <span class="icon icon-target"></span>
+                S-Box to DDT
+              </span>
+              <span class="nav-group-item " id="DDTToTT">
+                <span class="icon icon-newspaper"></span>
+                DDT To Truth Table
+              </span>
+              <span class="nav-group-item" id = "TTminimize">
+                <span class="icon icon-thumbs-up"></span>
+                Truth Table Minimization
+              </span>
+              <span class="nav-group-item" id = "LinIneq">
+                <span class="icon icon-cog"></span>
+                Linear Inequaltieis Generation
+              </span>
+              <span class="nav-group-item" id="SystemInformation">
+                <span class="icon icon-monitor"></span>
+                System Information
+              </span>
+              <span class="nav-group-item" id ="Authors">
+                <span class="icon icon-mail"></span>
+                Authors
+              </span>
+              <span class="nav-group-item" id = "Help">
+                <span class="icon icon-help-circled"></span>
+                Manual
+              </span>
+              <span class="nav-group-item" id = "About">
+                <span class="icon icon-info-circled"></span>
+                About MILES
+              </span>
+            </nav>
+          </div>
+
+          <div class="pane" id ="MainPane" style="background-color: #eee;"  >
+
+            
+          </div>
+      </div>
+    </div>
+  </div>
+  <script> require("./index.js")</script>
+  <script> require("jquery")</script> 
+
+</body>
+</html>

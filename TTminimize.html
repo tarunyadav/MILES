@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+    
+  </head>
+  <body>
+    <div class="container-fluid" style="background-color: #eee;height: 100vh">
+      <br>
+      <div class="row">
+          <div class="col text-center">
+            <button type="button" class="btn btn-danger btn-sm" id="DDTLabel" ><font size="4"> DDT Not Available</font></button>
+            <button type="button" class="btn btn-danger btn-sm" id="TTLabel" ><font size="4"> TT Not Available</font></button>
+          </div>
+      </div><br>
+      <div class="row">
+        <div class="col text-center">
+          <h3><span class="badge badge-secondary">Please Select the Options for Minimization</span> 
+            <button type="button" class="btn btn-success mx-auto float-right" style="margin-right: 20px; margin-top: 20px;" id="next">Next</button>
+          </h3>
+          
+            <div class="btn-group">
+              <button type="button" class="btn btn-secondary dropdown-toggle" id="SelectOption1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <b>First Option</b> </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#" id="Opt11" style="color: black;"><b>Fast</b></a>
+                <a class="dropdown-item" href="#" id = "Opt12" style="color: black;"><b>Pos</b></a>
+                <a class="dropdown-item" href="#" id="Opt13" style="color: black;" ><b>Strong</b></a>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-secondary dropdown-toggle" id="SelectOption2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <b>Second Option</b> </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#" id="Opt21" style="color: black;"><b>Exact</b></a>
+                <a class="dropdown-item" href="#" id = "Opt22" style="color: black;"><b>Many</b></a>
+
+              </div>
+            </div>
+            <button type="button" class="btn btn-info btn-sm" id="Minimize" ><font size="4"><b> Minimize TT</b></font></button>
+            <i class="fa fa-cog fa-2x fa-fw" style="color: red;margin-left: 20px;" id="running"></i>
+            <button type="button" class="btn btn-danger btn-sm"   style="display:none" id="Entries" ><font size="4"> <b>Entries in TT</b></font></button>
+            
+          </div>
+        </div>      <br> 
+
+      <div class="table-responsive" id="table" style="max-height: 80%; max-width: 100%;">
+          <table class="table table-striped table-hover table-condensed table-bordered table-sm" style="table-layout: fixed;padding-top: 0mm;" >
+          
+            <thead align="center" id="table-head">
+
+            </thead>
+            <tbody id="table-body">
+                            
+
+            </tbody>
+          </table>
+        </div>
+  </div>
+  <script> require("./TTminimize.js")</script>     
+</body>
+</html>

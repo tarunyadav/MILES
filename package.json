@@ -1,0 +1,36 @@
+{
+  "name": "MILES",
+  "productName": "MILES",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {
+    "bootstrap": "^4.3.1",
+    "electron": "^14.0.0",
+    "electron-builder": "^22.11.7",
+    "jquery": "^3.4.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.15.0"
+  },
+  "author": {
+    "name": "Tarun Yadav",
+    "email": "tarunyadav.iitp@gmail.com",
+    "url": ""
+  },
+  "scripts": {
+    "start": "electron .",
+    "start_inspect": "electron . --inspect=5858",
+    "package-win-64": "electron-packager . --asar --overwrite --platform=win32 --arch=x64 --icon=..\\MILES.png --out=release-builds",
+    "package-win-32": "electron-packager . --asar --overwrite --platform=win32 --arch=ia32 --icon=..\\MILES.png  --out=release-builds",
+    "package-mac": "electron-packager . --asar --overwrite --platform=darwin --arch=x64 --icon=..\\MILES.png  --out=release-builds",
+    "package-linux": "electron-packager . --asar --overwrite --platform=linux --arch=x64 --icon=..\\MILES.png --out=release-builds",
+    "pack": "electron-builder "
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "electron-packager": "^14.0.4",
+    "electron-progressbar": "^1.2.0",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "systeminformation": "^4.14.17"
+  }
+}
