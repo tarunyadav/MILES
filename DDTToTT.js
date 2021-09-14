@@ -228,9 +228,13 @@ btnfTT.addEventListener('click', function () {
         
         for (var j = 0; j < DDT[i].length; j++) {
             if (DDT[i][j] != 0) {
-                for (var k = 1; k < unique_values.length-1; k++) {
+                for (var k = 1; k < unique_values.length; k++) {
                     if (DDT[i][j] == unique_values[k]) {
                         p = Math.pow(2,k-1);
+                        if (k==unique_values.length-1){
+                            p=0;
+                        }
+                        
                         TT_Entries++;
                         var TT_entry = new Array();
                         rows += '<tr style="font-size:14px;padding:0px">'
@@ -263,8 +267,8 @@ btnfTT.addEventListener('click', function () {
         const result = await ipcRenderer.invoke('setTT', TT);
         console.log(result); // prints "foo"
     })();
-    console.log(TT);
-    console.log(TT[0]);
+    // console.log(TT);
+    // console.log(TT[0]);
     tableBody.insertAdjacentHTML('beforeend', rows);
     table.style.display = "block";
     (async () => {

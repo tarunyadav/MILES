@@ -33,10 +33,13 @@
       "category": "public.app-category.utilities"
     },
   "win": {
-      "target": "nsis"
+      //"target": "nsis",
+      "target": "portable",
+      "icon": "MILES.png"
   },
   "linux": {
       "target": "AppImage",
-      "category": "Utility"
+      "category": "Utility",
+      "icon": "MILES.png"
   }
 }

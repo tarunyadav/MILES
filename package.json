@@ -23,7 +23,9 @@
     "package-win-32": "electron-packager . --asar --overwrite --platform=win32 --arch=ia32 --icon=..\\MILES.png  --out=release-builds",
     "package-mac": "electron-packager . --asar --overwrite --platform=darwin --arch=x64 --icon=..\\MILES.png  --out=release-builds",
     "package-linux": "electron-packager . --asar --overwrite --platform=linux --arch=x64 --icon=..\\MILES.png --out=release-builds",
-    "pack": "electron-builder "
+    "pack-linux": "electron-builder -l",
+    "pack-win": "electron-builder -w",
+    "pack-mac": "electron-builder -m"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",

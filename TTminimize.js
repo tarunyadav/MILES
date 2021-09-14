@@ -3,6 +3,7 @@ const readline = require('readline');
 var path = require('path');
 var fs = require('fs');
 var $ = require('jquery');
+var os = require('os');
 
 try {
     window.$ = window.jQuery = require('jquery');
@@ -79,7 +80,17 @@ btnMinimize.addEventListener('click', function () {
     labelRunning.style.color = "green";
     // labelRunning.display = "block";
     //labellabelRunning.classList.remove("btn-danger");
-    const child = execFile(path.join(__dirname,'espresso'), [Option1, path.join(require('os').homedir(),'TT.txt')], (err, minout_string, stderr) => {
+    var espresso = "espresso";
+    if(os.platform=="win32"){
+        espresso = "espresso.exe";
+        console.log( os.tmpdir())
+        fs.copyFile(path.join(__dirname,"cygwin1.dll"),path.join(os.tmpdir(),"cygwin1.dll"), (err) => {
+            if (err) throw err;
+            console.log('cygwin1.dll written to tmp folder ' + os.tmpdir());
+        });
+    }
+
+    const child = execFile(path.join(__dirname,espresso), [Option1, path.join(require('os').homedir(),'TT.txt')], (err, minout_string, stderr) => {
     if (err) {
         throw err;
     }
