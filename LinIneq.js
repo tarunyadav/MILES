@@ -2,6 +2,7 @@ const {ipcRenderer, remote} = require('electron');
 const { execFile,exec,execSync} = require('child_process');
 var path = require('path');
 const fs = require('fs');
+
 try {
     window.$ = window.jQuery = require('jquery');
     window.Popper = require('popper.js').default;
@@ -18,11 +19,13 @@ btnGenerate= document.getElementById("GenerateInq");
 tableBody = document.getElementById("table-body");
 table = document.getElementById("table");
 tableHead = document.getElementById("table-head");
+btnExport = document.getElementById("export");
 
 
 var DDT = null;
 var TT = null;
 var minTT = null;
+var LinIneq = "";
 (async () => {
     DDT = await ipcRenderer.invoke('getDDT');
     if (DDT != null) {
@@ -61,23 +64,31 @@ btnGenerate.addEventListener('click', function () {
     tableBody.innerHTML = '';
     var ineq = "";
     var con = 0;
+    LinIneq = "";
+    LinIneq += "Input Variables "+ (minTT[0].length-1).toString()+"\n";
     for (var i = 0; i < minTT.length; i++) {
         ineq = ""
         con = 0
-        for (var j = 0; j < minTT[i].length; j++) {  
-            if(minTT[i][j]==0){
+        for (var j = 0; j < minTT[i].length-1; j++) {  
+            if(minTT[i][j]=="0"){
                 if(j!=0){
                     ineq += " + ";
                 }
-                ineq += "x"+j.toString().sub();
+                 ineq += "x"+j.toString().sub();
+                 LinIneq += "+ ";
             }
-            else if(minTT[i][j]==1){
+            else if(minTT[i][j]=="1"){
                 ineq += "- x"+j.toString().sub();
-                con += 1;
+                LinIneq += "- ";
+                con  += 1;
+            }
+            else if(minTT[i][j]=="-"){
+                LinIneq += "0 ";
             }
             
         }
         ineq += " + " + (con-1).toString() + " >=0";
+        LinIneq += (con-1).toString() + "\n";
         rows += '<tr style="font-size:14px;padding:0px">';
         rows += '<td align="center" style="width: 5px;padding:1px 1px 1px 1px !important;margin:0px !important;"> <b>' + (i+1).toString() + ' </b> </td>';
         rows += '<td align="center" style="width: 30px;padding:2px 2px 2px 2px !important;margin:0px !important;">' + ineq + '</td>';
@@ -87,5 +98,11 @@ btnGenerate.addEventListener('click', function () {
     table.style.display = "block";
 });
 
+btnExport.addEventListener('click', function () {
 
+    var logger = fs.createWriteStream(path.join(require('os').homedir(),'LinearInequalities.txt'), { flags: 'w'})
+    logger.write(LinIneq);
+    logger.end();
+    ipcRenderer.send('Message',path.join(require('os').homedir(),'LinearInequalities.txt'));
 
+});

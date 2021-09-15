@@ -135,3 +135,14 @@ ipcMain.on('LinIneq', async (event) => {
     mainWindow.show();
     mainWindow.webContents.send("LinIneq")
 })
+ipcMain.on('Message', async (event,path_save) => {
+    const options = {
+        type: 'info',
+        buttons: ['Ok'],
+        defaultId: 2,
+        title: 'Linear Inequalities Saved',
+        message: 'Linear Inequalities Saved to File: ' + path_save,
+      };
+    dialog.showMessageBox(null, options);
+
+})
